@@ -1,0 +1,13 @@
+    1  touch index.html
+    2  wget https://faucetbox.com/en/list
+    3  ls -halF
+    4  mv list list.html
+    5  $(cat list.html) > addresses.txt
+    6  echo "$(cat list.html)" > addresses.txt
+    7  ls -halF
+    8  rm list
+    9  echo "$(cat list.html | grep 'leave?url=')" > addresses.txt
+   10  mv addresses.txt addresses.js
+   11  touch url.js
+   12  history
+   13  history > cleaning-history.txt
