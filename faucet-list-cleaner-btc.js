@@ -8,6 +8,8 @@ var original = fs.readFileSync("clean-addr-btc.txt", 'utf8');
 //                                         <a href="leave?url=
 //                                         http%3A%2F%2Fbtchd.com
 //                                         " target="_blank">
+//                                         
+//                      <a href="leave?url=http%3A%2F%2Fbluesatoshi.com" target="_blank">
 
 
 
@@ -31,7 +33,7 @@ var original = fs.readFileSync("clean-addr-btc.txt", 'utf8');
 
 
 var better = original
-    .replace(/[\t ]+<a href="leave\?url=/g, '') // strip begins
+    .replace(/[\t ]*<a href="leave\?url=/g, '') // strip begins
     .replace(/" target="_blank">/g, '') // strip ends
     .split("\n");
 

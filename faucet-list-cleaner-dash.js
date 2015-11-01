@@ -12,14 +12,14 @@ var original = fs.readFileSync("clean-addr-dash.txt", 'utf8');
 
 
 // Faucetz.extracted = {
-//     "wallet": "1NnFcBCTTcmEYH4LCweFVogcxq6K21zWXf",
+//     "wallet": "XtX1GTf8LuvYTLpnMmmrkVvQt7vTenSQ7z",
 //     "results": [
 //         {
 //             "clean": "true",
 //             "reward": "index satoshi",
 //             "interval": "0 min",
 //             "description": "timestamp",
-//             "link": "http://playbitco.in/?ref=1NnFcBCTTcmEYH4LCweFVogcxq6K21zWXf",
+//             "link": "http://playbitco.in/?ref=XtX1GTf8LuvYTLpnMmmrkVvQt7vTenSQ7z",
 //             "name": "playbitco.in",
 //             "highestdailypayout": "0 satoshi"
 //         }
@@ -31,7 +31,7 @@ var original = fs.readFileSync("clean-addr-dash.txt", 'utf8');
 
 
 var better = original
-    .replace(/[\t ]+<a href="leave\?url=/g, '') // strip begins
+    .replace(/[\t ]*<a href="leave\?url=/g, '') // strip begins
     .replace(/" target="_blank">/g, '') // strip ends
     .split("\n");
 
@@ -54,7 +54,7 @@ function formatFinalList(list) {
             var query = parsed.search || "";
             var title = parsed.hostname || "";
             var url = addr.substr(0, addr.length - query.length);
-            url += "?r=1NnFcBCTTcmEYH4LCweFVogcxq6K21zWXf";
+            url += "?r=XtX1GTf8LuvYTLpnMmmrkVvQt7vTenSQ7z";
             
             var cleanFaucet = {
                 "clean": "true",
@@ -89,7 +89,7 @@ function formatFinalList(list) {
 //             "reward": "index satoshi",
 //             "interval": "0 min",
 //             "description": "timestamp",
-//             "link": "http://playbitco.in/?ref=1NnFcBCTTcmEYH4LCweFVogcxq6K21zWXf",
+//             "link": "http://playbitco.in/?ref=XtX1GTf8LuvYTLpnMmmrkVvQt7vTenSQ7z",
 //             "name": "playbitco.in",
 //             "highestdailypayout": "0 satoshi"
 //         }
@@ -98,7 +98,7 @@ function formatFinalList(list) {
 // console.log(formatFinalList(lista));
 
 var payload = 'Faucetz.dash = {' +
-    '"wallet": "1NnFcBCTTcmEYH4LCweFVogcxq6K21zWXf",' +
+    '"wallet": "XtX1GTf8LuvYTLpnMmmrkVvQt7vTenSQ7z",' +
     '"results": ' + JSON.stringify(formatFinalList(lista)) +
 '};';
 

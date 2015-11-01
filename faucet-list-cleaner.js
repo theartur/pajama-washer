@@ -31,7 +31,7 @@ var original = fs.readFileSync("clean-addr.txt", 'utf8');
 
 
 var better = original
-    .replace(/[\t ]+<a href="leave\?url=/g, '') // strip begins
+    .replace(/[\t ]*<a href="leave\?url=/g, '') // strip begins
     .replace(/" target="_blank">/g, '') // strip ends
     .split("\n");
 
